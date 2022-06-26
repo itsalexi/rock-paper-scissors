@@ -1,15 +1,17 @@
-function computerPlay {
+function computerPlay(){
     random = Math.floor(Math.random()*3);
     
     switch (random) {
         case 1:
-            return "rock"
+            return "Rock"
             break;
         case 2:
-            return "paper"
+            return "Paper"
             break;
         case 3:
-            return "scissors" 
+            return "Scissors" 
             break;
     }
 }
+
+console.log(computerPlay())
