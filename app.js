@@ -19,44 +19,57 @@ function computerPlay() {
 function playRound(playerSelection) {
   computerSelectElement = gameContainer.querySelector("#computerSelect");
   playerSelectElement = gameContainer.querySelector("#playerSelect");
+  gameTextElement = gameContainer.querySelector("#gameText");
+  gameInfoElement = gameContainer.querySelector("#gameInfo");
+
   let computerSelection = computerPlay();
 
   if (playerSelection == computerSelection) {
     playerScore++;
     computerScore++;
+    gameTextElement.innerHTML = "It's a draw!";
     console.log("Draw");
   } else if (playerSelection == "rock") {
     if (computerSelection == "scissors") {
       playerScore++;
-      console.log("Win");
+      gameTextElement.innerHTML = "You won!";
     } else if (computerSelection == "paper") {
       computerScore++;
-      console.log("Lose");
+      gameTextElement.innerHTML = "You lose!";
     }
   } else if (playerSelection == "paper") {
     if (computerSelection == "scissors") {
       computerScore++;
-      console.log("Lose");
+      gameTextElement.innerHTML = "You lose!";
     } else if (computerSelection == "rock") {
       playerScore++;
-      console.log("Win");
+      gameTextElement.innerHTML = "You won!";
     }
   } else if (playerSelection == "scissors") {
     if (computerSelection == "paper") {
       playerScore++;
-      console.log("Win");
+      gameTextElement.innerHTML = "You won!";
     } else if (computerSelection == "rock") {
       computerScore++;
-      console.log("Lose");
+      gameTextElement.innerHTML = "You lose!";
     }
   }
   computerSelectElement.innerHTML = computerSelection;
   playerSelectElement.innerHTML = playerSelection;
 }
 
-// function game() {
+function checkScore(pScore, cScore) {
+    if (pScore == 5 || cScore == 5) {
+        if (pScore > cScore) {
+            //win
+        } else if (cScore > pScore) {
+            //lose
+        } else {
+            //draw
+        }
 
-// }
+    }
+}
 
 function selectPlayerChoice(e) {
   let choice = e.target;
