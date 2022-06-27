@@ -1,6 +1,20 @@
 let playerScore = 0;
 let computerScore = 0;
+let gameStarted = true;
+
+// Game Container
 const gameContainer = document.querySelector(".game");
+
+computerSelectElement = gameContainer.querySelector("#computerSelect");
+playerSelectElement = gameContainer.querySelector("#playerSelect");
+gameTextElement = gameContainer.querySelector("#gameText");
+gameInfoElement = gameContainer.querySelector("#gameInfo");
+
+// Score Container
+const scoreContainer = document.querySelector(".score");
+playerScoreElement = scoreContainer.querySelector("#playerScore");
+computerScoreElement = scoreContainer.querySelector("#computerScore");
+
 function computerPlay() {
   random = Math.floor(Math.random() * 3) + 1;
   switch (random) {
@@ -17,16 +31,9 @@ function computerPlay() {
 }
 
 function playRound(playerSelection) {
-  computerSelectElement = gameContainer.querySelector("#computerSelect");
-  playerSelectElement = gameContainer.querySelector("#playerSelect");
-  gameTextElement = gameContainer.querySelector("#gameText");
-  gameInfoElement = gameContainer.querySelector("#gameInfo");
-
   let computerSelection = computerPlay();
 
   if (playerSelection == computerSelection) {
-    playerScore++;
-    computerScore++;
     gameTextElement.innerHTML = "It's a draw!";
     console.log("Draw");
   } else if (playerSelection == "rock") {
@@ -54,21 +61,37 @@ function playRound(playerSelection) {
       gameTextElement.innerHTML = "You lose!";
     }
   }
+  checkScore(playerScore, computerScore);
+
   computerSelectElement.innerHTML = computerSelection;
   playerSelectElement.innerHTML = playerSelection;
+
+  playerScoreElement.innerHTML = playerScore;
+  computerScoreElement.innerHTML = computerScore;
 }
 
 function checkScore(pScore, cScore) {
-    if (pScore == 5 || cScore == 5) {
-        if (pScore > cScore) {
-            //win
-        } else if (cScore > pScore) {
-            //lose
-        } else {
-            //draw
-        }
-
+  if (pScore == 5 || cScore == 5) {
+    if (pScore > cScore) {
+      startGame();
+      //win
+    } else if (cScore > pScore) {
+      //lose
+      startGame();
+    } else {
+      //draw
+      startGame();
     }
+  }
+}
+
+function startGame() {
+  playerScore = 0;
+  computerScore = 0;
+  playerScoreElement.innerHTML = playerScore;
+  computerScoreElement.innerHTML = computerScore;
+  playerSelectElement.innerHTML = "";
+  gameTextElement.innerHTML = "Welcome to Rock Paper Scissors!";
 }
 
 function selectPlayerChoice(e) {
@@ -84,5 +107,7 @@ function selectPlayerChoice(e) {
     playRound("scissors");
   }
 }
+
+startGame();
 
 document.addEventListener("click", selectPlayerChoice);
