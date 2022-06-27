@@ -20,6 +20,7 @@ finalComputerScoreElement = outcomeContainer.querySelector(
 );
 playAgainBtn = outcomeContainer.querySelector("#playAgain");
 
+const startContainer = document.querySelector(".start");
 const startBtn = document.querySelector("#start");
 
 // Score Container
@@ -98,8 +99,8 @@ function checkScore(pScore, cScore) {
 }
 
 function startGame() {
-  outcomeContainer.style.display = "none";
-  startBtn.style.display = "none";
+  outcomeContainer.classList.add("disabled");
+  startContainer.classList.add("disabled");
   playerScore = 0;
   computerScore = 0;
   playerScoreElement.innerHTML = playerScore;
@@ -108,12 +109,12 @@ function startGame() {
   computerSelectElement.innerHTML = "";
 
   gameTextElement.innerHTML = "Welcome to Rock Paper Scissors!";
-  mainContainer.style.display = "block";
+  mainContainer.classList.remove("disabled");
 }
 
 function endGame(outcome) {
-  outcomeContainer.style.display = "block";
-  mainContainer.style.display = "none";
+  outcomeContainer.remove("disabled");
+  mainContainer.classList.add("disabled");
   if (outcome == "win") {
     outcomeTextElement.innerHTML = "You won!";
   } else if (outcome == "lose") {
@@ -140,8 +141,8 @@ function selectPlayerChoice(e) {
 }
 
 function game() {
-  mainContainer.style.display = "none";
-  outcomeContainer.style.display = "none";
+  mainContainer.classList.add("disabled");
+  outcomeContainer.classList.add("disabled");
 }
 
 game();

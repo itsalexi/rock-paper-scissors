@@ -1,0 +1,57 @@
+body {
+  background-color: #023047;
+  font-family: "Titan One", cursive;
+  color: #8ecae6;
+  text-shadow: 2px 2px black;
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  color: #fb8500;
+  background: none;
+  border: white 1px solid;
+  border-radius: 3px;
+  padding: 1em 2em;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.score {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.start {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.outcomeContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: center;
+}
+
+.disabled {
+  display: none;
+}
