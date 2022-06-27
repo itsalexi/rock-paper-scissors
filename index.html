@@ -9,23 +9,34 @@
 </head>
 
 <body>
-    <div class="game">
-        <p id="gameText"></p>
-        <p id="gameInfo"></p>
-
-        <p>Player chose: <span id="playerSelect"></span></p>
-        <p>Computer chose: <span id="computerSelect"></span></p>
+    <div class="start">
+        <button id="start">Start</button>
     </div>
+    <div class="main">
+        <div class="game">
+            <p id="gameText"></p>
+            <p id="gameInfo"></p>
 
-    <div class="buttons">
-        <button id="rock" class="controls">Rock</button>
-        <button id="paper" class="controls">Paper</button>
-        <button id="scissors" class="controls">Scissors</button>
+            <p>Player chose: <span id="playerSelect"></span></p>
+            <p>Computer chose: <span id="computerSelect"></span></p>
+        </div>
+
+        <div class="buttons">
+            <button id="rock" class="controls">Rock</button>
+            <button id="paper" class="controls">Paper</button>
+            <button id="scissors" class="controls">Scissors</button>
+        </div>
+
+        <div class="score">
+            <p>Player Score: <span id="playerScore">0</span></p>
+            <p>Computer Score: <span id="computerScore">0</span></p>
+
+        </div>
     </div>
-
-    <div class="score">
-        <p>Player Score: <span id="playerScore">0</span></p>
-        <p>Computer Score: <span id="computerScore">0</span></p>
+    <div class="outcome">
+        <p id="outcomeText"></p>
+        <p>Final Score: <span id="finalPlayerScore"></span>/<span id="finalComputerScore"></span></p>
+        <button id="playAgain">Play again?</button>
 
     </div>
     <script src="app.js"></script>
