@@ -113,7 +113,7 @@ function startGame() {
 }
 
 function endGame(outcome) {
-  outcomeContainer.remove("disabled");
+  outcomeContainer.classList.remove("disabled");
   mainContainer.classList.add("disabled");
   if (outcome == "win") {
     outcomeTextElement.innerHTML = "You won!";

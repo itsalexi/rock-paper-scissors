@@ -1,5 +1,5 @@
 body {
-  background-color: #023047;
+  background-color: #03045e;
   font-family: "Titan One", cursive;
   color: #8ecae6;
   text-shadow: 2px 2px black;
@@ -8,31 +8,33 @@ body {
 }
 
 button {
-  color: #fb8500;
-  background: none;
-  border: white 1px solid;
-  border-radius: 3px;
-  padding: 1em 2em;
+  font-family: "Titan One", cursive;
+  color: #8ecae6;
+  background: #023e8a;
+  border: none;
+  border-radius: 5%;
 }
-
-.main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.start button {
+  border-radius: 3px;
+  padding: 0.5em 1em;
 }
 
 .game {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
 }
 
 .buttons {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
 }
 
+.buttons button {
+  background-color: ;
+  padding: 0.5em 1em;
+  font-size: 5em;
+}
 .score {
   display: flex;
   justify-content: center;
@@ -52,6 +54,22 @@ button {
   flex-direction: center;
 }
 
+.score {
+  display: flex;
+  justify-content: space-around;
+}
+
+.selections {
+  display: flex;
+  justify-content: space-around;
+}
+.gameDesc {
+  display: flex;
+  justify-content: center;
+}
+
 .disabled {
   display: none;
 }
+
+
