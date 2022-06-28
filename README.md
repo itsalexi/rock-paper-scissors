@@ -4,4 +4,4 @@ A rock paper scissors game built in JavaScript
 
 TODO:
 
-1. Style the website
+none for now
