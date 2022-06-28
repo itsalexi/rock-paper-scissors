@@ -14,8 +14,19 @@ button {
   border: none;
   border-radius: 5%;
 }
-.start,.outcome button {
+
+button:hover {
+  cursor: pointer;
+  background: #588157;
+  transition: all 0.2s;
+}
+
+.outcome button {
   border-radius: 3px;
+  padding: 0.5em 1em;
+}
+
+.start button {
   padding: 0.5em 1em;
 }
 
@@ -71,5 +82,3 @@ button {
 .disabled {
   display: none;
 }
-
-
