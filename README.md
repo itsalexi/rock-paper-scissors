@@ -2,6 +2,4 @@
 
 A rock paper scissors game built in JavaScript
 
-TODO:
-
-none for now
+Try it out! https://itsalexi.github.io/rock-paper-scissors/
